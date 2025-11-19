@@ -98,7 +98,7 @@ export const Hero: React.FC = () => {
             <DrawingTransformation 
             initialIcon={ClipboardDocumentCheckIcon} 
             finalIcon={SparklesIcon} 
-            label="PATENT"
+            label="PATENTE"
             delay={0} 
             x="4%" 
             y="8%"
@@ -111,7 +111,7 @@ export const Hero: React.FC = () => {
             <DrawingTransformation 
             initialIcon={PuzzlePieceIcon} 
             finalIcon={CursorArrowRaysIcon} 
-            label="GAME"
+            label="JOGO"
             delay={3000} 
             x="88%" 
             y="75%"
@@ -124,7 +124,7 @@ export const Hero: React.FC = () => {
             <DrawingTransformation 
             initialIcon={NewspaperIcon} 
             finalIcon={ChartBarIcon} 
-            label="DATA"
+            label="DADOS"
             delay={6000} 
             x="88%" 
             y="12%"
@@ -149,11 +149,11 @@ export const Hero: React.FC = () => {
       {/* Hero Text Content */}
       <div className="text-center relative z-10 max-w-6xl mx-auto px-4 pt-8">
         <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white mb-6 leading-[1.1]">
-          Bring anything <br/>
-          to <span className="underline decoration-4 decoration-blue-500 underline-offset-4 md:underline-offset-8 text-white">life</span>.
+          Dê vida a <br/>
+          qualquer <span className="underline decoration-4 decoration-blue-500 underline-offset-4 md:underline-offset-8 text-white">ideia</span>.
         </h1>
         <p className="text-base sm:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed font-light">
-          Gemini sees the code in everything. Drop in an old map, a floor plan, a diagram, or a doodle, and watch it turn into a working interactive experience instantly.
+          O Gemini vê o código em tudo. Envie uma imagem ou simplesmente descreva sua ideia, e veja-a se transformar em uma experiência interativa instantaneamente.
         </p>
       </div>
     </>

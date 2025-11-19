@@ -115,7 +115,7 @@ const App: React.FC = () => {
       if (html) {
         const newCreation: Creation = {
           id: crypto.randomUUID(),
-          name: file ? file.name : 'New Creation',
+          name: file ? file.name : 'Nova Criação',
           html: html,
           // Store the full data URL for easy display
           originalImage: imageBase64 && mimeType ? `data:${mimeType};base64,${imageBase64}` : undefined,
@@ -127,7 +127,7 @@ const App: React.FC = () => {
 
     } catch (error) {
       console.error("Failed to generate:", error);
-      alert("Something went wrong while bringing your file to life. Please try again.");
+      alert("Algo deu errado ao dar vida ao seu arquivo. Por favor, tente novamente.");
     } finally {
       setIsGenerating(false);
     }
@@ -173,11 +173,11 @@ const App: React.FC = () => {
                 // Set as active immediately
                 setActiveCreation(importedCreation);
             } else {
-                alert("Invalid creation file format.");
+                alert("Formato de arquivo inválido.");
             }
         } catch (err) {
             console.error("Import error", err);
-            alert("Failed to import creation.");
+            alert("Falha ao importar criação.");
         }
         // Reset input
         if (importInputRef.current) importInputRef.current.value = '';
@@ -228,7 +228,7 @@ const App: React.FC = () => {
               rel="noopener noreferrer"
               className="text-zinc-600 hover:text-zinc-400 text-xs font-mono transition-colors pb-2"
             >
-              Created by @ammaar
+              Criado por @ammaar
             </a>
         </div>
       </div>
@@ -246,9 +246,9 @@ const App: React.FC = () => {
         <button 
             onClick={handleImportClick}
             className="flex items-center space-x-2 p-2 text-zinc-500 hover:text-zinc-300 transition-colors opacity-60 hover:opacity-100"
-            title="Import Artifact"
+            title="Importar Artefato"
         >
-            <span className="text-xs font-medium uppercase tracking-wider hidden sm:inline">Upload previous artifact</span>
+            <span className="text-xs font-medium uppercase tracking-wider hidden sm:inline">Enviar artefato anterior</span>
             <ArrowUpTrayIcon className="w-5 h-5" />
         </button>
         <input 

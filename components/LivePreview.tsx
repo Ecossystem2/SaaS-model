@@ -43,7 +43,7 @@ const PdfRenderer = ({ dataUrl }: { dataUrl: string }) => {
   useEffect(() => {
     const renderPdf = async () => {
       if (!window.pdfjsLib) {
-        setError("PDF library not initialized");
+        setError("Biblioteca PDF não inicializada");
         setLoading(false);
         return;
       }
@@ -77,7 +77,7 @@ const PdfRenderer = ({ dataUrl }: { dataUrl: string }) => {
         setLoading(false);
       } catch (err) {
         console.error("Error rendering PDF:", err);
-        setError("Could not render PDF preview.");
+        setError("Não foi possível renderizar o PDF.");
         setLoading(false);
       }
     };
@@ -169,7 +169,7 @@ export const LivePreview: React.FC<LivePreviewProps> = ({ creation, isLoading, i
                 <button 
                   onClick={onReset}
                   className="w-3 h-3 rounded-full bg-zinc-700 group-hover/controls:bg-red-500 hover:!bg-red-600 transition-colors flex items-center justify-center focus:outline-none"
-                  title="Close Preview"
+                  title="Fechar Preview"
                 >
                   <XMarkIcon className="w-2 h-2 text-black opacity-0 group-hover/controls:opacity-100" />
                 </button>
@@ -182,7 +182,7 @@ export const LivePreview: React.FC<LivePreviewProps> = ({ creation, isLoading, i
         <div className="flex items-center space-x-2 text-zinc-500">
             <CodeBracketIcon className="w-3 h-3" />
             <span className="text-[11px] font-mono uppercase tracking-wider">
-                {isLoading ? 'System Processing...' : creation ? creation.name : 'Preview Mode'}
+                {isLoading ? 'Processando Sistema...' : creation ? creation.name : 'Modo Preview'}
             </span>
         </div>
 
@@ -193,7 +193,7 @@ export const LivePreview: React.FC<LivePreviewProps> = ({ creation, isLoading, i
                     {creation.originalImage && (
                          <button 
                             onClick={() => setShowSplitView(!showSplitView)}
-                            title={showSplitView ? "Show App Only" : "Compare with Original"}
+                            title={showSplitView ? "Mostrar Apenas App" : "Comparar com Original"}
                             className={`p-1.5 rounded-md transition-all ${showSplitView ? 'bg-zinc-800 text-zinc-100' : 'text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800'}`}
                         >
                             <ViewColumnsIcon className="w-4 h-4" />
@@ -202,7 +202,7 @@ export const LivePreview: React.FC<LivePreviewProps> = ({ creation, isLoading, i
 
                     <button 
                         onClick={handleExport}
-                        title="Export Artifact (JSON)"
+                        title="Exportar Artefato (JSON)"
                         className="text-zinc-500 hover:text-zinc-300 transition-colors p-1.5 rounded-md hover:bg-zinc-800"
                     >
                         <ArrowDownTrayIcon className="w-4 h-4" />
@@ -210,11 +210,11 @@ export const LivePreview: React.FC<LivePreviewProps> = ({ creation, isLoading, i
 
                     <button 
                         onClick={onReset}
-                        title="New Upload"
+                        title="Novo Upload"
                         className="ml-2 flex items-center space-x-1 text-xs font-bold bg-white text-black hover:bg-zinc-200 px-3 py-1.5 rounded-md transition-colors"
                     >
                         <PlusIcon className="w-3 h-3" />
-                        <span className="hidden sm:inline">New</span>
+                        <span className="hidden sm:inline">Novo</span>
                     </button>
                 </>
             )}
@@ -233,8 +233,8 @@ export const LivePreview: React.FC<LivePreviewProps> = ({ creation, isLoading, i
                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <h3 className="text-zinc-100 font-mono text-lg tracking-tight">Constructing Environment</h3>
-                    <p className="text-zinc-500 text-sm mt-2">Interpreting visual data...</p>
+                    <h3 className="text-zinc-100 font-mono text-lg tracking-tight">Construindo Ambiente</h3>
+                    <p className="text-zinc-500 text-sm mt-2">Interpretando dados visuais...</p>
                 </div>
 
                 {/* Progress Bar */}
@@ -244,10 +244,10 @@ export const LivePreview: React.FC<LivePreviewProps> = ({ creation, isLoading, i
 
                  {/* Terminal Steps */}
                  <div className="border border-zinc-800 bg-black/50 rounded-lg p-4 space-y-3 font-mono text-sm">
-                     <LoadingStep text="Analyzing visual inputs" active={loadingStep === 0} completed={loadingStep > 0} />
-                     <LoadingStep text="Identifying UI patterns" active={loadingStep === 1} completed={loadingStep > 1} />
-                     <LoadingStep text="Generating functional logic" active={loadingStep === 2} completed={loadingStep > 2} />
-                     <LoadingStep text="Compiling preview" active={loadingStep === 3} completed={loadingStep > 3} />
+                     <LoadingStep text="Analisando inputs visuais" active={loadingStep === 0} completed={loadingStep > 0} />
+                     <LoadingStep text="Identificando padrões de UI" active={loadingStep === 1} completed={loadingStep > 1} />
+                     <LoadingStep text="Gerando lógica funcional" active={loadingStep === 2} completed={loadingStep > 2} />
+                     <LoadingStep text="Compilando preview" active={loadingStep === 3} completed={loadingStep > 3} />
                  </div>
              </div>
           </div>
@@ -257,7 +257,7 @@ export const LivePreview: React.FC<LivePreviewProps> = ({ creation, isLoading, i
             {showSplitView && creation.originalImage && (
                 <div className="w-full md:w-1/2 h-1/2 md:h-full border-b md:border-b-0 md:border-r border-zinc-800 bg-[#0c0c0e] relative flex flex-col shrink-0">
                     <div className="absolute top-4 left-4 z-10 bg-black/80 backdrop-blur text-zinc-400 text-[10px] font-mono uppercase px-2 py-1 rounded border border-zinc-800">
-                        Input Source
+                        Fonte Original
                     </div>
                     <div className="w-full h-full p-6 flex items-center justify-center overflow-hidden">
                         {creation.originalImage.startsWith('data:application/pdf') ? (

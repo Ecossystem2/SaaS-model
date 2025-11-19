@@ -25,7 +25,7 @@ export const CreationHistory: React.FC<CreationHistoryProps> = ({ history, onSel
     <div className="w-full animate-in fade-in slide-in-from-bottom-8 duration-700">
       <div className="flex items-center space-x-3 mb-3 px-2">
         <ClockIcon className="w-4 h-4 text-zinc-500" />
-        <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-500">Archive</h2>
+        <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-500">Arquivo</h2>
         <div className="h-px flex-1 bg-zinc-800"></div>
       </div>
       
@@ -60,7 +60,7 @@ export const CreationHistory: React.FC<CreationHistoryProps> = ({ history, onSel
                     {item.name}
                   </h3>
                   <div className="flex items-center space-x-1 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="text-[10px] text-blue-400">Restore</span>
+                    <span className="text-[10px] text-blue-400">Restaurar</span>
                     <ArrowRightIcon className="w-3 h-3 text-blue-400" />
                   </div>
                 </div>
